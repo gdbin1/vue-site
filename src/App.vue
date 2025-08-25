@@ -5,7 +5,7 @@ import D0825_2 from './components/D0825_2.vue';
 import D0825_3 from './components/D0825_3.vue';
 
 const pages = {D0825_1, D0825_2, D0825_3}
-const activeComp = ref("D0825_1")
+const activeComp = ref("")
 </script>
 
 <template>
@@ -27,7 +27,7 @@ const activeComp = ref("D0825_1")
 <style scoped>
   button{
     margin: 5px;
-    filter: drop-shadow(0 0 3px #777);
+    filter: drop-shadow(5px 5px 5px rgb(100, 9, 247));
   }
   #comp_view {
     margin-top: 20px;
