@@ -21,11 +21,14 @@
     <div :class="classname">클래스 바인드</div>
     <div :class="{myclass: true}">클래스 바인드 true/false</div>
     <div :class="{myclass:isImprotant}">클래스 important속성 여부</div>
+    <hr>
+    <h2 style="color: red;">v-bind:src로 이미지 넣기</h2>
+    <img v-bind:src='ren' alt="렌고쿠">
 </template>
 
 <script setup>
 import { ref } from 'vue';
-
+import ren from "../assets/ren.png"
 
 const size = ref("20px")
 const size2 = ref(30)

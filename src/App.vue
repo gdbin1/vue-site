@@ -33,5 +33,6 @@ const activeComp = ref("D0825_1")
     margin-top: 20px;
     border: 1px solid black;
     border-radius: 20px;
+    box-shadow: 5px 5px 5px 5px;
   }
 </style>
