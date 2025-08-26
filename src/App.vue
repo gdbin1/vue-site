@@ -47,7 +47,7 @@ const pages2 = {D0826_for, D0826_event}
 <KirbyPage v-else />
 </template>
 
-<style scoped>
+<style>
   button{
     margin: 5px;
     filter: drop-shadow(5px 5px 5px rgb(100, 9, 247));
@@ -76,6 +76,9 @@ const pages2 = {D0826_for, D0826_event}
   padding: 0.4em 0.8em;
   font-size: 0.8em;
   z-index: 1000;
+}
+body{
+  background: radial-gradient(circle, white, rgb(226, 159, 226));
 }
 
 </style>
