@@ -11,6 +11,7 @@ import D0827_model from './components/D0827_model.vue';
 import D0827_eModifiers from './components/D0827_eModifiers.vue';
 import D0827_computed from './components/D0827_computed.vue';
 import D0827_watchers from './components/D0827_watchers.vue';
+import D0827_form from './components/D0827_form.vue';
 
 
 
@@ -22,7 +23,7 @@ const activeComp = ref("")
 // 3일차 0826
 const pages2 = {D0826_for, D0826_event}
 // 4일차 0827
-const pages3 = {D0827_methods, D0827_model, D0827_eModifiers, D0827_computed, D0827_watchers}
+const pages3 = {D0827_methods, D0827_model, D0827_eModifiers, D0827_computed, D0827_watchers, D0827_form}
 </script>
 
 <template>
@@ -59,6 +60,7 @@ const pages3 = {D0827_methods, D0827_model, D0827_eModifiers, D0827_computed, D0
   <button @click="activeComp = 'D0827_eModifiers'">이벤트 수정자</button>
   <button @click="activeComp = 'D0827_computed'">계산된 코드</button>
   <button @click="activeComp = 'D0827_watchers'">데이터 값 변경시, 감시자가 실행</button>
+  <button @click="activeComp = 'D0827_form'">폼</button>
 
   <div id="comp_view">
     <KeepAlive>
