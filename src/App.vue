@@ -6,6 +6,9 @@ import D0825_3 from './components/D0825_3.vue';
 import D0826_for from './components/D0826_for.vue';
 import D0826_event from './components/D0826_event.vue';
 import KirbyPage from './KirbyPage.vue';
+import D0827_methods from './components/D0827_methods.vue';
+import D0827_model from './components/D0827_model.vue';
+import D0827_eModifiers from './components/D0827_eModifiers.vue';
 
 
 
@@ -16,6 +19,8 @@ const pages = {D0825_1, D0825_2, D0825_3}
 const activeComp = ref("")
 // 3일차 0826
 const pages2 = {D0826_for, D0826_event}
+// 4일차 0827
+const pages3 = {D0827_methods, D0827_model, D0827_eModifiers}
 </script>
 
 <template>
@@ -34,6 +39,7 @@ const pages2 = {D0826_for, D0826_event}
     </KeepAlive>
   </div>
   <hr>
+
   <!-- 3일차 -->
   <h2 style="text-align: center;">0826_vue 3일차</h2>
   <button @click="activeComp = 'D0826_for'">for_</button>
@@ -41,6 +47,17 @@ const pages2 = {D0826_for, D0826_event}
   <div id="comp_view">
     <KeepAlive>
       <component :is="pages2[activeComp]"></component>
+    </KeepAlive>
+  </div>
+  <hr>
+  <!-- 4일차 -->
+    <h2 style="text-align: center;">0827_vue 4일차</h2>
+  <button @click="activeComp = 'D0827_methods'">methods 메소드 구현</button>
+  <button @click="activeComp = 'D0827_model'">model 양방향 바인딩</button>
+  <button @click="activeComp = 'D0827_eModifiers'">이벤트 수정자</button>
+  <div id="comp_view">
+    <KeepAlive>
+      <component :is="pages3[activeComp]"></component>
     </KeepAlive>
   </div>
 </div>
@@ -80,5 +97,6 @@ const pages2 = {D0826_for, D0826_event}
 body{
   background: radial-gradient(circle, white, rgb(226, 159, 226));
 }
+
 
 </style>
