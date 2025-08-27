@@ -9,6 +9,8 @@ import KirbyPage from './KirbyPage.vue';
 import D0827_methods from './components/D0827_methods.vue';
 import D0827_model from './components/D0827_model.vue';
 import D0827_eModifiers from './components/D0827_eModifiers.vue';
+import D0827_computed from './components/D0827_computed.vue';
+import D0827_watchers from './components/D0827_watchers.vue';
 
 
 
@@ -20,7 +22,7 @@ const activeComp = ref("")
 // 3일차 0826
 const pages2 = {D0826_for, D0826_event}
 // 4일차 0827
-const pages3 = {D0827_methods, D0827_model, D0827_eModifiers}
+const pages3 = {D0827_methods, D0827_model, D0827_eModifiers, D0827_computed, D0827_watchers}
 </script>
 
 <template>
@@ -55,6 +57,9 @@ const pages3 = {D0827_methods, D0827_model, D0827_eModifiers}
   <button @click="activeComp = 'D0827_methods'">methods 메소드 구현</button>
   <button @click="activeComp = 'D0827_model'">model 양방향 바인딩</button>
   <button @click="activeComp = 'D0827_eModifiers'">이벤트 수정자</button>
+  <button @click="activeComp = 'D0827_computed'">계산된 코드</button>
+  <button @click="activeComp = 'D0827_watchers'">데이터 값 변경시, 감시자가 실행</button>
+
   <div id="comp_view">
     <KeepAlive>
       <component :is="pages3[activeComp]"></component>
@@ -68,6 +73,7 @@ const pages3 = {D0827_methods, D0827_model, D0827_eModifiers}
   button{
     margin: 5px;
     filter: drop-shadow(5px 5px 5px rgb(100, 9, 247));
+    cursor: grab;
   }
   #comp_view {
     margin-top: 20px;
@@ -98,5 +104,21 @@ body{
   background: radial-gradient(circle, white, rgb(226, 159, 226));
 }
 
-
+/* 두번째 css */
+/* .page-view{
+  margin: 20px;
+  filter: drop-shadow(5px 7px 5px gray);
+  border: 3px double black;
+  box-shadow: 5px 5px 5px 5px gray;
+  font-weight: bold;
+  background: radial-gradient(rgb(255, 255, 255), #eecaca);
+}
+button{
+  box-shadow: 3px 3px 3px 3px navy;
+  background-color: lightblue;
+  margin: 5px;
+  cursor: grab;
+  font-weight: bold;
+  border: 3px dashed rgba(204, 179, 38, 0.712);
+} */
 </style>
