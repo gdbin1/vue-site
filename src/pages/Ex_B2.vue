@@ -47,8 +47,14 @@
         <div class="contentbox banner">여기 배너 배너
           <br>배너
         </div>
-        <div class="contentbox notice">여기 공지사항</div>
+        <div class="contentbox notice">
+          <h3>공지사항</h3>
+          <p style="border-bottom: 1px solid black; text-align: left;">1공지사항ㅇㅇㅇㅇㅇㅇㅇㅇㅇ</p>
+          <p style="border-bottom: 1px solid black; text-align: left;">2공지사항ㅇㅇㅇㅇㅇㅇㅇㅇㅇ</p>
+          <p style="border-bottom: 1px solid black; text-align: left;">3공지사항ㅇㅇㅇㅇㅇㅇㅇㅇㅇ</p>
+        </div>
         <div class="contentbox gallery">
+          <h3>갤러리</h3>
           <div v-for="(item, index) in galleryItems" :key="index" class="gallery-item">
             <div class="gallery-border-box">
               <img
@@ -293,6 +299,18 @@ body {
   align-items: flex-start;
   flex-wrap: wrap;
   gap: 20px;
+}
+.contentbox.gallery h3{
+  width: 100%;
+  margin-bottom: 5px;
+  margin-top: 0;
+  text-align: left;
+}
+.contentbox.notice h3{
+  width: 100%;
+  margin-bottom: 5px;
+  margin-top: 0;
+  text-align: left;
 }
 .gallery-item{
   display: flex;
