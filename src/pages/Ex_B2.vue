@@ -58,7 +58,8 @@
             </div>
             <p class="image-desc">{{ item.description }}</p>
           </div>
-          <p style="text-align: center; font-size: 0.7em; width: 100%;">좌클릭시 뒷모습 확인가능</p>
+          <p style="text-align: center; font-size: 0.7em; width: 100%;">
+            --이미지에 shift+좌클릭시 뒷모습 확인가능--</p>
         </div>
         <div class="contentbox shortcut">여기는 사진이랑 링크인가?</div>
       </div>
