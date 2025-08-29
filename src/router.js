@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory, } from 'vue-router'
+import { createRouter,createWebHistory, } from 'vue-router'
 import HomeView from './pages/HomeView.vue'
 import AboutView from './pages/AboutView.vue'
 import StudyView from './pages/StudyView.vue'
@@ -17,29 +17,40 @@ const routes = [
   { path: '/about', component: AboutView },
   { path: "/study", component: StudyView},
   {
-    path: "/wd/",
+    path: "/wd",
     component: Ex_WebDesign,
     children: [
         {
-            path: "/wd/a1",
+            path: "a1",
             component: Ex_A1,
         },
         {
-            path: "/wd/b2",
+            path: "b2",
             component: Ex_B2,
+            children: [
+              {path: 'menu1', component:Menu1_1},
+              {path: "menu2", component:Menu1_2},
+              {path: "menu3", component:Menu1_3}
+            ]
         },
     ],
   },
-
-  {path: "/wd/b2/menu1", component:Menu1_1},
-  {path: "/wd/b2/menu2", component:Menu1_2},
-  {path: "/wd/b2/menu3", component:Menu1_3}
-
-
 ]
+  // {path: "/wd/b2/menu1", component:Menu1_1},
+  // {path: "/wd/b2/menu2", component:Menu1_2},
+  // {path: "/wd/b2/menu3", component:Menu1_3}
+
+
+  // {
+  //           path: "/wd/a1",
+  //           component: Ex_A1,
+  //       },
+  //       {
+  //           path: "/wd/b2",
+  //           component: Ex_B2,
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes,
 })
   // createWebHistory
