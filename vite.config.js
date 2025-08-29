@@ -4,7 +4,7 @@ import vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
   // base 경로를 배포 환경에 맞게 고정합니다.
-  base: '/vue-site/', 
+  base: '/', 
   plugins: [
     vue(),
   ],
