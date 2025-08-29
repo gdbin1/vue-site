@@ -9,7 +9,7 @@
           <ul>
             <li>메뉴 1
               <ul class="sub-menu">
-                <li>서브메뉴 1-1</li>
+                <li><a href="../components//main_menu1/Menu1.vue">서브메뉴 1-1</a></li>
                 <li>서브메뉴 1-2</li>
                 <li>서브메뉴 1-3</li>
                 <li>서브메뉴 1-4</li>
@@ -150,8 +150,9 @@
       <br>
       <p>-유리로 만든 공예품을 전시하는 사이트</p>
       <br>
-      <p>-모두 유리로 만든것이며, 직접 유리를 자르고, 디자인해서 가마에구워 작품을 완성함<br>
-          이 완성작들은 유리기 때문에 빛을 투사하는 시점마다 다른 느낌을 줌</p>
+      <p>-작업은 모두 유리를 직접 자르고 디자인한 뒤, 가마에 구워 완성한 것입니다. <br>
+        완성된 작품은 독립된 오브제로 전시될 수 있을 뿐 아니라, 빛을 투사해 벽면에 그림자처럼 투영되는
+      또 다른 형식으로도 보여집니다.</p>
       </div>
       <div class="button-container">
       <button @click="closeModal">닫기</button>
@@ -162,6 +163,8 @@
 
 <script setup>
 import { onMounted, onUnmounted, ref } from 'vue'
+// 메인-서브메뉴 임포트 해오기
+import Menu1 from '../components/main_menu1/Menu1.vue'
 // 로고이미지 임포트
 // import ren_logo from '../assets/logo/ren_logo.png'
 // import glass_logo from '../assets/logo/logo_glass.jpg'
@@ -387,6 +390,7 @@ body {
   color: inherit;
   font-size: 0.5em;
   font-weight: bold;
+  color: inherit;
 }
 .spot-menu a:hover{
   color:#cc99ff;
