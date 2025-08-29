@@ -50,7 +50,6 @@
       </div>
 
       <div class="item item-b">
-        <router-view></router-view>
         <div class="contentbox banner">
           <img :src="m_slide5" alt="배너이미지" class="banner-image">
           <p>
@@ -160,6 +159,9 @@
       </div>
     </div>
   </div>
+  <div class="sub-page-content">
+    <router-view></router-view>
+  </div>
 </template>
 
 <script setup>
@@ -247,6 +249,13 @@ onMounted(() => {
 </script>
 
 <style scoped>
+.sub-page-content{
+  width: 100%;
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  margin-top: 200px;
+}
 *{box-sizing: border-box;}
 body {
   margin: 0;
