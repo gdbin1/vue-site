@@ -30,7 +30,7 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig(({ mode }) => {
   return {
     plugins: [vue()],
-    // base: mode === 'production'  ?  '/vue-site/'  :  '/',        
-     //예: /my-react-app/  
+    base: mode === 'production'  ?  '/vue-site/'  :  '/',        
+    //  예: /my-react-app/  
   }
 })
