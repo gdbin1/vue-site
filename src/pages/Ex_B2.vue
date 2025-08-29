@@ -9,9 +9,9 @@
           <ul>
             <li>메뉴 1
               <ul class="sub-menu">
-                <li><a href="../components//main_menu1/Menu1.vue">서브메뉴 1-1</a></li>
-                <li>서브메뉴 1-2</li>
-                <li>서브메뉴 1-3</li>
+                <li><a href="/wd/b2/menu1" target="_blank">소개</a></li>
+                <li><a href="/wd/b2/menu2" target="_blank">네 모난 사회 속</a></li>
+                <li><a href="/wd/b2/menu3" target="_blank">네 모난 사회 속_2</a></li>
                 <li>서브메뉴 1-4</li>
               </ul>
             </li>
@@ -50,6 +50,7 @@
       </div>
 
       <div class="item item-b">
+        <router-view></router-view>
         <div class="contentbox banner">
           <img :src="m_slide5" alt="배너이미지" class="banner-image">
           <p>
@@ -164,7 +165,7 @@
 <script setup>
 import { onMounted, onUnmounted, ref } from 'vue'
 // 메인-서브메뉴 임포트 해오기
-import Menu1 from '../components/main_menu1/Menu1.vue'
+// import Menu1 from '../components/main_menu1/Menu1_1.vue'
 // 로고이미지 임포트
 // import ren_logo from '../assets/logo/ren_logo.png'
 // import glass_logo from '../assets/logo/logo_glass.jpg'
@@ -189,6 +190,10 @@ import c_image1 from '../assets/webimages/contents_image1.jpg'
 import c_image2 from '../assets/webimages/contents_image2.jpg'
 import c_image3 from '../assets/webimages/contents_image3.jpg'
 import c_image4 from '../assets/webimages/contents_image4.jpg'
+
+// 메뉴 이동
+// import Menu1_1 from '../components/main_menu1/Menu1_1.vue'
+
 // 밑에는 이미지 특정 키 입력시 변경되는거
 const galleryItems = ref([
   {
