@@ -3,7 +3,7 @@
     <div class="top-row">
       <div class="item item-a">
             <div class="logo">
-          <img :src="ren_logo" alt="사이트 로고" />
+          <img :src="gpt_logo" alt="사이트 로고" />
         </div>
         <nav class="main-menu">
           <ul>
@@ -41,11 +41,20 @@
             </li>
           </ul>
         </nav>
+        <nav class="spot-menu">
+          <ul>
+            <li><a href="#">SPOTMENU1</a></li>
+            <li><a href="#">SPOTMENU2</a></li>
+          </ul>
+        </nav>
       </div>
 
       <div class="item item-b">
-        <div class="contentbox banner">여기 배너 배너
-          <br>배너
+        <div class="contentbox banner">
+          <img :src="m_slide5" alt="배너이미지" class="banner-image">
+          <p>
+            <span class="banner-font">Lorem ipsum dolor sit amer</span><br>
+            Lorem ipsum dolor sit amet, consectetur aidpisicing elit.</p>
         </div>
         <div class="contentbox notice">
           <h3>공지사항</h3>
@@ -76,16 +85,33 @@
           <p style="text-align: center; font-size: 0.7em; width: 100%;">
             --이미지에 shift+좌클릭시 뒷모습 확인가능--</p>
         </div>
-        <div class="contentbox shortcut">여기는 사진이랑 링크인가?</div>
+        <div class="contentbox shortcut">
+          <div class="shortcut-item">
+            <img :src="c_image1" alt="c_image1">
+            <a href="#">크게 보기</a>
+          </div>
+          <div class="shortcut-item">
+            <img :src="c_image2" alt="c_image2">
+            <a href="#">크게 보기</a>
+          </div>
+          <div class="shortcut-item">
+            <img :src="c_image3" alt="c_image3">
+            <a href="#">크게 보기</a>
+          </div>
+          <div class="shortcut-item">
+            <img :src="c_image4" alt="c_image4">
+            <a href="#">크게 보기</a>
+          </div>
+        </div>
       </div>
-
-
       <div class="item item-c">
         <div class="slider-track"
         :style="{transform : `translateX(-${currentSlide * 100}%)`}">
          <img :src="m_slide1" alt="m_slide1">
          <img :src="m_slide2" alt="m_slide2">
          <img :src="m_slide3" alt="m_slide3">
+         <img :src="m_slide4" alt="m_slide4">
+         <!-- <img :src="m_slide5" alt="m_slide5"> -->
       </div>
       </div>
     </div>
@@ -93,7 +119,7 @@
 
     <div class="item item-d">
       <div class="footer-logo">
-        <img :src="ren_logo" alt="로고">
+        <img :src="gpt_logo" alt="로고">
       </div>
       <div class="footer-content">
         <div class="footer-menu">
@@ -115,16 +141,39 @@
       </div>
     </div>
   </div>
+  <div v-if="modalOpen" class="modal-overlay" @click.self="closeModal">
+    <div class="modal-content">
+      <div class="text-container">
+      <h2>유리 공예 전시사이트</h2>
+      <br>
+      <p>-로고:재미니가 생성해줌</p>
+      <br>
+      <p>-유리로 만든 공예품을 전시하는 사이트</p>
+      <br>
+      <p>-모두 유리로 만든것이며, 직접 유리를 자르고, 디자인해서 가마에구워 작품을 완성함<br>
+          이 완성작들은 유리기 때문에 빛을 투사하는 시점마다 다른 느낌을 줌</p>
+      </div>
+      <div class="button-container">
+      <button @click="closeModal">닫기</button>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup>
 import { onMounted, onUnmounted, ref } from 'vue'
 // 로고이미지 임포트
-import ren_logo from '../assets/logo/ren_logo.png'
+// import ren_logo from '../assets/logo/ren_logo.png'
+// import glass_logo from '../assets/logo/logo_glass.jpg'
+import gpt_logo from '../assets/logo/gpt_logo2.png'
 // 얘넨 메인 슬라이드에 들어갈애들 이미지 임포트
 import m_slide1 from '../assets/webimages/mainimage1.jpg'
 import m_slide2 from '../assets/webimages/mainimage2.jpg'
 import m_slide3 from '../assets/webimages/mainimage3.jpg'
+import m_slide4 from '../assets/webimages/mainimage4.jpg'
+
+// 컨텐츠 박스안에 배너에 들어갈 이미지 임포트
+import m_slide5 from '../assets/webimages/mainimage5.jpg'
 
 // 얘넨 컨텐츠 박스안에 갤러리안에 들어갈 이미지 임포트
 import gr1 from '../assets/webimages/gallery1.jpg'
@@ -132,6 +181,11 @@ import gr2 from '../assets/webimages/garry2.jpg'
 import gr1_1 from '../assets/webimages/garry1_1.jpg'
 import gr2_2 from '../assets/webimages/garry2_2.jpg'
 
+// 얘넨 컨텐츠 박스안에 갤러리 밑에칸에 들어갈 이미지 임포트
+import c_image1 from '../assets/webimages/contents_image1.jpg'
+import c_image2 from '../assets/webimages/contents_image2.jpg'
+import c_image3 from '../assets/webimages/contents_image3.jpg'
+import c_image4 from '../assets/webimages/contents_image4.jpg'
 // 밑에는 이미지 특정 키 입력시 변경되는거
 const galleryItems = ref([
   {
@@ -150,7 +204,7 @@ const changeImage = (item) => {
 }
 // 밑에는 슬라이드 쇼에 관한것
 const currentSlide = ref(0);
-const totalSlides = 3;
+const totalSlides = 4;
 let slideInterval;
 
 const startSlideShow = () => {
@@ -166,6 +220,21 @@ onMounted(() => {
 onUnmounted(() => {
   clearInterval(slideInterval);
 });
+
+// 밑에는 모달 코드
+const modalOpen = ref(false);
+
+const openModal = () => {
+  modalOpen.value = true;
+}
+const closeModal = () => {
+  modalOpen.value = false;
+};
+onMounted(() => {
+  setTimeout(() => {
+    openModal();
+  }, 1000);
+})
 // 여기서부터 css------------------------------------
 </script>
 
@@ -287,7 +356,42 @@ body {
 .sub-menu li:hover{
    background: linear-gradient(to bottom right, #ffffcc 0%, #ffccff);
 }
-
+.spot-menu{
+  width: 100%;
+  margin-top: 60px;
+}
+.spot-menu ul{
+  list-style:none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.spot-menu li {
+  padding: 0 10px;
+  white-space: nowrap;
+  position: relative;
+}
+.spot-menu li:first-child::after{
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 0.5em;
+}
+.spot-menu a{
+  text-decoration: none;
+  color: inherit;
+  font-size: 0.5em;
+  font-weight: bold;
+}
+.spot-menu a:hover{
+  color:#cc99ff;
+  font-weight: bold;
+}
 /* 여기서부터 컨텐츠박스-------------------------- */
 .contentbox {
   flex-grow: 1;
@@ -303,6 +407,32 @@ body {
 .shortcut{flex:1.5}
 .content-box:last-child {
   border-bottom: none;
+}
+/* 컨텐츠 박스 안에 배너부스 */
+.contentbox.banner{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 15px;
+  gap: 10px;
+}
+.banner-image {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.contentbox.banner p{
+  flex-grow: 1;
+  font-size: 0.5em;
+  font-weight: bold;
+  text-align: left;
+  margin: 0;
+}
+.banner-font{
+  font-size: 1.5em;
+  vertical-align: super;
+  font-weight: bold;
 }
 /* 컨텐츠 박스 안에 있는 공지사항부스 */
 .contentbox.notice h3{
@@ -354,6 +484,33 @@ body {
   margin-bottom: 20px;
   font-size: 0.7em;
 }
+/* 컨텐츠박스안에 갤러리 밑에있는 박스 */
+.shortcut{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+.shortcut-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  text-align: center;
+  margin: 5px;
+}
+.shortcut-item img{
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 5px;
+}
+.shortcut-item a{
+  font-size: 0.6em;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: grabbing;
+}
 /* 여기부터 이미지 슬라이드 ------------------------------ */
 .slider-container {
   width: 100%;
@@ -370,7 +527,7 @@ body {
 .slider-track img{
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  /* object-fit: contain; */
   flex-shrink: 0;
 }
 
@@ -427,6 +584,73 @@ body {
   text-align: left;
 
   /* margin-left: 30px */
+}
+/* 모달 css */
+.modal-overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 70%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(204, 204, 153);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  border-radius: 50px;
+  box-shadow: 5px 5px 5px 5px rgb(102, 83, 58);
+}
+.modal-content{
+  background-image: url('../assets/webimages/modal1.avif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left
+}
+.modal-content button{
+  margin-top: 15px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: rgb(78, 78, 42);
+  color: white;
+  cursor: pointer;
+}
+.modal-content h2{
+  border-bottom: 3px solid rgb(128, 43, 0);
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  font-size: 200%;
+  margin-top: 10px;
+  padding-bottom: 10px;
+}
+.modal-content p{
+  margin:0;
+  font-weight: bold;
+  font-size: 130%;
+  border-bottom: 3px solid rgb(128, 43, 0);
+  padding-bottom: 5px;
+}
+.modal-content p:last-child {
+  border-bottom: none;
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+}
+.text-container{
+  font-weight: bold;
 }
 /* 그 외 css */
 /* .click-gallery{
