@@ -9,9 +9,9 @@
           <ul>
             <li>메뉴 1
               <ul class="sub-menu">
-                <li><a href="/wd/b2/menu1" target="_blank">소개</a></li>
-                <li><a href="/wd/b2/menu2" target="_blank">네 모난 사회 속</a></li>
-                <li><a href="/wd/b2/menu3" target="_blank">네 모난 사회 속_2</a></li>
+                <li><a href="/#/wd/b2/menu1" target="_blank">소개</a></li>
+                <li><a href="/#/wd/b2/menu2" target="_blank">네 모난 사회 속</a></li>
+                <li><a href="/#/wd/b2/menu3" target="_blank">네 모난 사회 속_2</a></li>
                 <li>서브메뉴 1-4</li>
               </ul>
             </li>
