@@ -8,6 +8,7 @@ import Ex_WebDesign from './pages/Ex_WebDesign.vue'
 import Menu1_1 from './components/main_menu1/Menu1_1.vue'
 import Menu1_2 from './components/main_menu1/Menu1_2.vue'
 import Menu1_3 from './components/main_menu1/Menu1_3.vue'
+import Menu1_4 from './components/main_menu1/Menu1_4.vue'
 
 const routes = [
   { path: '/', component: HomeView},
@@ -37,6 +38,10 @@ const routes = [
             {
                 path: 'menu3',
                 component: Menu1_3
+            },
+             {
+                path: 'menu4',
+                component: Menu1_4
             }
         ]
       },

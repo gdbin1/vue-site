@@ -12,7 +12,7 @@
                 <li><router-link to="/wd/b2/menu1">소개</router-link></li>
                 <li><router-link to="/wd/b2/menu2">네 모난 사회 속</router-link></li>
                 <li><router-link to="/wd/b2/menu3">네 모난 사회 속_2</router-link></li>
-                <li>서브메뉴 1-4</li>
+                <li><router-link to="/wd/b2/menu4">네 모난 사회 속_3</router-link></li>
               </ul>
             </li>
             <li>메뉴 2
