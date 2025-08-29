@@ -49,9 +49,18 @@
         </div>
         <div class="contentbox notice">
           <h3>공지사항</h3>
-          <p style="border-bottom: 1px solid black; text-align: left;">1공지사항ㅇㅇㅇㅇㅇㅇㅇㅇㅇ</p>
-          <p style="border-bottom: 1px solid black; text-align: left;">2공지사항ㅇㅇㅇㅇㅇㅇㅇㅇㅇ</p>
-          <p style="border-bottom: 1px solid black; text-align: left;">3공지사항ㅇㅇㅇㅇㅇㅇㅇㅇㅇ</p>
+          <p class="notice-item">
+            <span>Lorem ipsum dolor sit amet,</span>
+            <span> 0000.00.00</span>
+          </p>
+          <p class="notice-item">
+            <span>Lorem ipsum dolor sit amet,</span>
+            <span> 0000.00.00</span>
+          </p>
+          <p class="notice-item">
+            <span>Lorem ipsum dolor sit amet,</span>
+            <span> 0000.00.00</span>
+          </p>
         </div>
         <div class="contentbox gallery">
           <h3>갤러리</h3>
@@ -98,7 +107,10 @@
           </ul>
         </div>
         <div class="footer-copyright">
-          <p>Copyright ---여기 카피라이트</p>
+          <p>Lorem ipsum dolor sit amet consectetur adiplsicing elit, sed do elusmod tempor incididunt ut labore
+            et dolore magna aliqua Ut enim ad <br>
+            minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
         </div>
       </div>
     </div>
@@ -259,7 +271,7 @@ body {
   margin-top: 5px;
   border: 1px solid black;
   box-shadow: 3px 3px 3px gray;
-  background-color: #98fdf0; /* 배경색 추가 */
+  background: linear-gradient(to right, #ccffff 0%, #cc99ff 100%);
   display: none;
   box-shadow: 5px 5px 5px;
 }
@@ -273,7 +285,7 @@ body {
   border: none;
 }
 .sub-menu li:hover{
-  background-color: blanchedalmond;
+   background: linear-gradient(to bottom right, #ffffcc 0%, #ffccff);
 }
 
 /* 여기서부터 컨텐츠박스-------------------------- */
@@ -292,6 +304,20 @@ body {
 .content-box:last-child {
   border-bottom: none;
 }
+/* 컨텐츠 박스 안에 있는 공지사항부스 */
+.contentbox.notice h3{
+  width: 100%;
+  margin-bottom: 5px;
+  margin-top: 0;
+  text-align: left;
+}
+.notice-item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  font-size: 0.7em;
+  padding-bottom: 5px;
+}
 /* 컨텐츠 박스 안에 있는 갤러리부스 */
 .contentbox.gallery{
   display: flex;
@@ -306,12 +332,7 @@ body {
   margin-top: 0;
   text-align: left;
 }
-.contentbox.notice h3{
-  width: 100%;
-  margin-bottom: 5px;
-  margin-top: 0;
-  text-align: left;
-}
+
 .gallery-item{
   display: flex;
   flex-direction: column;
@@ -402,7 +423,9 @@ body {
 }
 .footer-copyright{
   font-size: 0.4em;
-  color: 777;
+  display: flex;
+  text-align: left;
+
   /* margin-left: 30px */
 }
 /* 그 외 css */
